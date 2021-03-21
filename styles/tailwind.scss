@@ -1,0 +1,11 @@
+// maintain different tailwind file so compilation doesn't happen with every css change
+
+// tailwind utilities
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// compose tw styles for better code readability
+
+@layer components {
+}
