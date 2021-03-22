@@ -1,5 +1,5 @@
 import { getUniqueID } from "../../utils/helperFunctions";
-import Metric from "./metric";
+import Metric from "./repoMetric";
 
 export default function Repo({ repoDetails }) {
   const { name, url, isFork, parent, description, ...rest } = repoDetails;

@@ -1,3 +1,16 @@
+import DJ from "dayjs";
+const relativeTime = require("dayjs/plugin/relativeTime");
+DJ.extend(relativeTime);
+
+import { ForkIcon, LicenseIcon, StargazerIcon, UpdatedAtIcon } from "../icons";
+
+const icons = {
+  stargazers: <StargazerIcon />,
+  updatedAt: <UpdatedAtIcon />,
+  fork: <ForkIcon />,
+  license: <LicenseIcon />,
+};
+
 export default function Metric({ details }) {
   const { languages, forkCount, updatedAt, license, stargazerCount } = details;
   return (
