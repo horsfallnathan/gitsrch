@@ -10,6 +10,7 @@ import Dropdown from "./dropdown";
 import Repo from "./repoComponent";
 import { getUniqueID } from "../../utils/helperFunctions";
 import { UserContext } from "../../utils/context";
+import ProgressBar from "./progressBar";
 
 export const RepoList = () => {
   const { user } = useContext(UserContext);
@@ -109,6 +110,12 @@ export const RepoList = () => {
       {status === "success" && data.pages && (
         <div className="repoList-cont">
           <div className="sticky">
+            <ProgressBar
+              progressProps={{
+                totalCount: data?.pages[0]?.totalCount ?? 0, //hardcoded first page because total count remains the same through all nodes
+                currCount: filterData.current?.length ?? 0,
+              }}
+            />
             <form className="searchBar-form" onSubmit={(e) => handleSubmit(e)}>
               <input
                 className="searchBar pl-8 "

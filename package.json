@@ -8,12 +8,15 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --browser chrome"
   },
   "dependencies": {
     "dayjs": "^1.10.4",
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
+    "msw": "^0.27.1",
     "next": "10.0.9",
     "react": "17.0.1",
     "react-dom": "17.0.1",
@@ -23,6 +26,7 @@
   "license": "MIT License",
   "devDependencies": {
     "autoprefixer": "^10.2.5",
+    "cypress": "^6.8.0",
     "postcss": "^8.2.8",
     "sass": "^1.32.8",
     "tailwindcss": "^2.0.4"

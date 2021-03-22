@@ -22,14 +22,14 @@ export const SwitchUser = ({ handleSwitch, message }) => {
           {message && <p>{message}</p>}
           <button
             className="switchIconBtn"
-            onClick={() => handleSwitch()}
+            onClick={() => handleSwitch("usermode")}
           ></button>
-          <p className=" mb-4">Enter their github username</p>
+          <p className=" mb-4">Enter github username</p>
           <form onSubmit={(e) => handleSubmit(e)}>
             <input
               className="searchBar"
               type="text"
-              placeholder="enter username"
+              placeholder="eg. horsfallnathan"
               onChange={(e) => handleInput(e)}
             />
           </form>

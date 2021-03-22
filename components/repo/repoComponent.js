@@ -1,6 +1,11 @@
 import { getUniqueID } from "../../utils/helperFunctions";
 import Metric from "./repoMetric";
 
+/**
+ * Single repo card to display details
+ * @param {props} repoDetails
+ * @returns
+ */
 export default function Repo({ repoDetails }) {
   const { name, url, isFork, parent, description, ...rest } = repoDetails;
   return (

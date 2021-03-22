@@ -70,7 +70,6 @@ export default async (req, res) => {
   await graphQLClient
     .request(query, { endCursor: pageParam, user: queryKey[1] })
     .then((data) => {
-      console.log(data, "was called");
       res.status(200).json(data.user?.repositories);
     })
     .catch((err) => {

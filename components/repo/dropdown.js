@@ -1,19 +1,17 @@
 import { useEffect } from "react";
 
 export default function Dropdown({ dropDownProps }) {
-  const {
-    foundList,
-    setFoundList,
-    hasNextPage,
-    handleLoadMore,
-  } = dropDownProps;
+  const { foundList, setFoundList, hasNextPage, fetchNextPage } = dropDownProps;
 
   const searchServer = (e) => {
     e.preventDefault();
-    console.log("server called");
-    handleLoadMore();
+    fetchNextPage();
   };
+
   useEffect(() => {
+    /**
+     * clear filtered list when dropdown is closed (component unmounts)
+     */
     return () => setFoundList([]);
   }, []);
   return (
@@ -31,7 +29,7 @@ export default function Dropdown({ dropDownProps }) {
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+            className="block px-4 py-2 text-sub-text text-sm hover:bg-dark-2 hover:text-main-text"
             role="menuitem"
           >
             {name}

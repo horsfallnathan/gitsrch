@@ -1,14 +1,10 @@
 import { UserView } from "../components/userView/index";
 import { RepoList } from "../components/repo/index";
 import { Layout } from "../components/layout";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { SwitchUser } from "../components/userView/switchUser";
 import { UserContext } from "../utils/context";
-import {
-  SwitchTransition,
-  CSSTransition,
-  TransitionGroup,
-} from "react-transition-group";
+import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 export default function Index() {
   const [user, setUser] = useState("ben");
@@ -28,7 +24,7 @@ export default function Index() {
               <div className="sticky">
                 <SwitchTransition>
                   <CSSTransition
-                    key={userMode ? "usermode" : "changemode"}
+                    key={userMode === "usermode" ? "usermode" : "changemode"}
                     timeout={500}
                     addEndListener={(node, done) => {
                       node.addEventListener("transitionend", done, false);

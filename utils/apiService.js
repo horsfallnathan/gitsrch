@@ -1,3 +1,5 @@
+const { useQuery } = require("react-query");
+
 /**
  *
  * @param {string} link api route
