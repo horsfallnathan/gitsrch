@@ -33,7 +33,7 @@
     @apply pt-2 relative mx-auto text-sub-text;
   }
   .searchBar {
-    @apply w-full bg-dark-4 rounded-md border border-sub-text focus:border-sub-text focus:ring-2 focus:ring-dark-2 text-base outline-none text-sub-text py-1 px-3 pl-8 leading-8 transition-colors duration-200 ease-in-out;
+    @apply w-full bg-dark-4 rounded-md border border-sub-text focus:border-sub-text focus:ring-2 focus:ring-dark-2 text-base outline-none text-sub-text py-1 px-3 leading-8 transition-colors duration-200 ease-in-out;
   }
   .searchBar-btn {
     @apply absolute left-3 top-4 mr-4 py-1;

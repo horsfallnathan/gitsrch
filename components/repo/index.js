@@ -111,7 +111,7 @@ export const RepoList = () => {
           <div className="sticky">
             <form className="searchBar-form" onSubmit={(e) => handleSubmit(e)}>
               <input
-                className="searchBar"
+                className="searchBar pl-8 "
                 type="search"
                 placeholder="Search repository list"
                 onChange={(e) => handleSearch(e)}

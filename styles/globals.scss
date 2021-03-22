@@ -3,13 +3,17 @@ $dark-4: #1b1b1b;
 $dark-3: #252525;
 $dark-2: #303030;
 $dark-1: #3b3b3b;
+$brand: #4338ca;
 
 $mainTextColor: rgb(240, 240, 240);
 $subTextColor: rgb(184, 184, 184);
 
+$anim: cubic-bezier(0.075, 0.82, 0.165, 1);
+
 html {
   background-color: $dark-4;
   color: $subTextColor;
+  scroll-behavior: smooth;
 }
 
 .pageContainer {
@@ -77,9 +81,6 @@ html {
   background-color: $dark-2;
   margin: 1rem 0;
   border-radius: 0.5rem;
-  // &:not(:first-of-type) {
-  //   border-top: 1px solid;
-  // }
 }
 .sticky {
   top: 2rem;
@@ -99,8 +100,45 @@ html {
 .loading-bg {
   background-color: $dark-2;
 }
+.switch {
+  position: relative;
+}
+.switchIconBtn {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 4;
+  background-color: #1b1b1b;
+  border-bottom-right-radius: 0.5rem;
+  content: "switch user view";
+  &:hover {
+    background-color: $brand;
+    transition: all 0.3s $anim;
+    transform: scale(1.05);
+  }
+}
 
-.switchUser {
-  // hide switch user card on initial load
-  display: none;
+.switch-enter {
+  opacity: 0;
+  transform: translateY(-10%);
+}
+.switch-enter-active {
+  opacity: 1;
+  transform: translateY(0%);
+  transition: opacity 0.3s $anim;
+}
+.switch-exit {
+  opacity: 1;
+  transform: translateY(0%);
+}
+.switch-exit-active {
+  opacity: 0;
+  transition: opacity 0.3s $anim;
+  transform: translateY(10%);
+}
+.switch-enter-active .btn,
+.switch-exit-active .btn {
+  transition: opacity 0.3s $anim, transform 0.3s $anim;
 }
