@@ -1,1 +1,57 @@
 @import "./mixins.scss";
+$dark-4: #1b1b1b;
+$dark-3: #252525;
+$dark-2: #303030;
+$dark-1: #3b3b3b;
+
+$mainTextColor: rgb(240, 240, 240);
+$subTextColor: rgb(184, 184, 184);
+
+html {
+  background-color: $dark-4;
+  color: $subTextColor;
+}
+
+.pageContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.headerSection {
+  padding: 2rem 0;
+  background-color: $dark-4;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  @include add-breakpoint(sm_inv) {
+    height: 6rem;
+  }
+}
+.mainGrid {
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: minmax(280px, 1.5fr) 4fr;
+  gap: 2rem;
+  @include add-breakpoint(sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.metric {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+}
+.metric:not(:last-of-type) {
+  margin-right: 1rem;
+}
+.metricIcon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.3rem;
+  fill: currentColor;
+}
