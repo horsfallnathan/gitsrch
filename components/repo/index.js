@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useInfiniteQuery } from "react-query";
 import { SearchIcon } from "../icons";
 import { getRepos } from "../../utils/apiService";
@@ -9,9 +9,11 @@ import { ErrorLoadingRepo, LoadingRepo } from "../layout/tempComponents";
 import Dropdown from "./dropdown";
 import Repo from "./repoComponent";
 import { getUniqueID } from "../../utils/helperFunctions";
+import { UserContext } from "../../utils/context";
 
 export const RepoList = () => {
-  const user = "horsfallnathan"; //temp
+  const { user } = useContext(UserContext);
+
   /**
    * Fetches paginated repo data
    */

@@ -1,11 +1,12 @@
-import { forwardRef } from "react";
+import { forwardRef, useContext } from "react";
 import { useQuery } from "react-query";
 import Metric from "./metric";
 import { getUser } from "../../utils/apiService";
 import { ErrorLoadingUser, LoadingUser } from "../layout/tempComponents";
+import { UserContext } from "../../utils/context";
 
-export const UserView = forwardRef(({ ref }) => {
-  let user = "horsfallnathan"; //temp
+export const UserView = forwardRef((props, ref) => {
+  const { user } = useContext(UserContext);
 
   /** Destructure results from api call*/
   const { data: userData, status: userStatus } = useQuery(

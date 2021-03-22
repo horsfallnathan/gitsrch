@@ -1,6 +1,6 @@
 import { forwardRef, useState } from "react";
 
-export const SwitchUser = forwardRef(({ changeUser }, ref) => {
+export const SwitchUser = forwardRef(({ changeUser, handleSwitch }, ref) => {
   const [searchString, setSearchString] = useState("");
 
   const handleInput = (e) => {
@@ -10,6 +10,7 @@ export const SwitchUser = forwardRef(({ changeUser }, ref) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     changeUser(searchString);
+    handleSwitch();
   };
   return (
     <div ref={ref} className="userCont hasTransition switchUser">
