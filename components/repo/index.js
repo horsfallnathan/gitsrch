@@ -2,10 +2,21 @@ import { useState } from "react";
 import { SearchIcon } from "../icons";
 
 export const RepoList = () => {
+  /** State variables to control dropdown visibility */
   const [isSearching, setIsSearching] = useState(false);
+
+  /** State variables to store input text */
+  const [searchString, setSearchString] = useState("");
+  /**
+   *
+   * @param {SyntheticEvent} e
+   */
   const handleSearch = (e) => {
     let text = e.target.value.trim();
-    setSrchStr(text.toLowerCase());
+    /** Updates search string*/
+    setSearchString(text.toLowerCase());
+
+    /** Filter at intervals */
     debouncedFilter(text.toLowerCase());
   };
 
