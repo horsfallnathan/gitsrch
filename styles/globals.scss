@@ -38,7 +38,8 @@ html {
     grid-template-columns: 1fr;
   }
 }
-
+.userMetrics,
+.repo-metrics,
 .metric {
   display: inline-flex;
   flex-wrap: wrap;
