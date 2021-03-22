@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { UserContext } from "../../utils/context";
 import { AddUserIcon } from "../icons";
 
-export const SwitchUser = ({ changeUser, handleSwitch }) => {
+export const SwitchUser = ({ handleSwitch, message }) => {
+  const { setUser } = useContext(UserContext);
   const [searchString, setSearchString] = useState("");
 
   const handleInput = (e) => {
@@ -10,13 +12,14 @@ export const SwitchUser = ({ changeUser, handleSwitch }) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    changeUser(searchString);
-    handleSwitch();
+    setUser(searchString);
+    handleSwitch("usermode");
   };
   return (
     <div className="switch">
       <div className="userCont">
         <div className="userCard">
+          {message && <p>{message}</p>}
           <button
             className="switchIconBtn"
             onClick={() => handleSwitch()}

@@ -112,6 +112,7 @@ html {
   z-index: 4;
   background-color: #1b1b1b;
   border-bottom-right-radius: 0.5rem;
+  border: 1px solid lighten($brand, 10);
   content: "switch user view";
   &:hover {
     background-color: $brand;

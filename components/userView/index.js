@@ -4,7 +4,7 @@ import Metric from "./metric";
 import { getUser } from "../../utils/apiService";
 import { ErrorLoadingUser, LoadingUser } from "../layout/tempComponents";
 import { UserContext } from "../../utils/context";
-import { AddUserIcon } from "../icons";
+import { SwitchUser } from "./switchUser";
 
 export const UserView = ({ handleSwitch }) => {
   const { user } = useContext(UserContext);
@@ -18,11 +18,16 @@ export const UserView = ({ handleSwitch }) => {
     <div className="switch">
       <div className="userCard-cont">
         <button
-          onClick={() => handleSwitch()}
+          onClick={() => handleSwitch("inputmode")}
           className="switchIconBtn"
         ></button>
         {userStatus === "loading" && <LoadingUser />}
-        {userStatus === "error" && <ErrorLoadingUser />}
+        {userStatus === "error" && (
+          <SwitchUser
+            handleSwitch={handleSwitch}
+            message={"Error: user not found"}
+          />
+        )}
         {userStatus === "success" && userData && (
           <div className="userCont hasTransition">
             <div className="userImgCont">

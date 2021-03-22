@@ -12,12 +12,11 @@ import {
 
 export default function Index() {
   const [user, setUser] = useState("ben");
-  const [userMode, setUserMode] = useState(true);
+  const [userMode, setUserMode] = useState("usermode");
   const value = { user, setUser };
 
-  const handleSwitch = (e) => {
-    console.log("called", userMode);
-    setUserMode((userMode) => !userMode);
+  const handleSwitch = (usermode) => {
+    setUserMode(usermode);
   };
   return (
     <Layout>
@@ -36,13 +35,10 @@ export default function Index() {
                     }}
                     classNames="switch"
                   >
-                    {userMode === true ? (
+                    {userMode === "usermode" ? (
                       <UserView handleSwitch={handleSwitch} />
                     ) : (
-                      <SwitchUser
-                        changeUser={setUser}
-                        handleSwitch={handleSwitch}
-                      />
+                      <SwitchUser handleSwitch={handleSwitch} />
                     )}
                   </CSSTransition>
                 </SwitchTransition>
