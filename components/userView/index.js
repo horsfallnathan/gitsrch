@@ -2,28 +2,20 @@ import { forwardRef } from "react";
 import { useQuery } from "react-query";
 import Metric from "./metric";
 import { getUser } from "../../utils/apiService";
+import { ErrorLoadingUser, LoadingUser } from "../layout/tempComponents";
 
-// const userData = {
-//   avatarUrl: "",
-//   name: "nathan",
-//   bio: "jsSlinger",
-//   followers: {
-//     totalCount: 9,
-//   },
-//   following: {
-//     totalCount: 9,
-//   },
-// };
 export const UserView = forwardRef(({ ref }) => {
   let user = "horsfallnathan"; //temp
+
+  /** Destructure results from api call*/
   const { data: userData, status: userStatus } = useQuery(
     ["user", user],
     getUser
   );
   return (
     <div ref={ref}>
-      {/* {userStatus === "loading" && <LoadingUser />}
-      {userStatus === "error" && <ErrorLoadingUser />} */}
+      {userStatus === "loading" && <LoadingUser />}
+      {userStatus === "error" && <ErrorLoadingUser />}
       {userStatus === "success" && userData && (
         <div className="userCont hasTransition">
           <div className="userImgCont">
