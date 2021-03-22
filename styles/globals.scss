@@ -73,7 +73,28 @@ html {
 }
 .repo-cont {
   padding: 1rem;
-  &:not(:first-of-type) {
-    border-top: 1px solid;
+  background-color: $dark-2;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  // &:not(:first-of-type) {
+  //   border-top: 1px solid;
+  // }
+}
+.sticky {
+  top: 2rem;
+  position: -webkit-sticky;
+  position: sticky;
+  @include add-breakpoint(sm_inv) {
+    top: 6rem;
   }
+  z-index: 3;
+  transition: all 0.4s ease-in-out;
+}
+
+.footer {
+  padding: 4rem 0;
+}
+
+.loading-bg {
+  background-color: $dark-2;
 }
