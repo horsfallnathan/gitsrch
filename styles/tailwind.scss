@@ -18,7 +18,7 @@
     @apply mx-auto object-cover rounded-full h-40 w-40  border-2 border-dark-1;
   }
   .userCard {
-    @apply bg-dark-2 rounded-lg shadow p-8 pt-24;
+    @apply bg-dark-2 rounded-lg shadow p-8 pt-24 border border-dark-2;
   }
   .userCard > .details {
     @apply text-center;
@@ -57,6 +57,6 @@
     @apply bg-indigo-700;
   }
   .dropDown-cont {
-    @apply origin-top-right absolute right-0 -mt-4 w-full max-h-96 overflow-y-auto rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 divide-gray-100 focus:outline-none;
+    @apply origin-top-right absolute right-0  w-full max-h-96 overflow-y-auto rounded-md shadow-lg bg-dark-3 ring-1 ring-black ring-opacity-5 divide-dark-4 focus:outline-none;
   }
 }

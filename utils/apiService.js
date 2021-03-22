@@ -37,6 +37,6 @@ const getUser = async (pageParam = {}) => fetcher("/api/user", pageParam);
  * @param {object} pageParam sent by react query function
  * @returns response from api call
  */
-const getRepos = (pageParam = {}) => fetcher("/api/repos", pageParam);
+const getRepos = (pageParam = {}) => fetcher("/api/repo", pageParam);
 
 module.exports = { getUser, getRepos };

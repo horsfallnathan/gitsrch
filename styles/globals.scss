@@ -55,3 +55,25 @@ html {
   margin-right: 0.3rem;
   fill: currentColor;
 }
+
+.dropDown-cont {
+  min-height: 6rem;
+}
+.repoList-cont {
+  @include add-breakpoint(sm_inv) {
+    margin-top: 6rem;
+  }
+}
+
+.searchBar-form {
+  padding-bottom: 8px;
+  background-color: $dark-4;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.05),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.repo-cont {
+  padding: 1rem;
+  &:not(:first-of-type) {
+    border-top: 1px solid;
+  }
+}
